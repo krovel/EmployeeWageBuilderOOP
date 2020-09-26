@@ -6,7 +6,7 @@ public class EmployeeWageBuilderOOP {
 	private final String company;
 	private final int emp_rate_per_hour,num_of_working_days,max_hrs_in_month;
 	private int totalEmpWage;
-	public EmpWageBuilder(String company,int emp_rate_per_hour,int num_of_working_days,int max_hrs_in_month) {
+	public EmployeeWageBuilderOOP(String company,int emp_rate_per_hour,int num_of_working_days,int max_hrs_in_month) {
 		// TODO Auto-generated method stub
 		this.company = company;
 		this.emp_rate_per_hour = emp_rate_per_hour;
@@ -43,10 +43,10 @@ public class EmployeeWageBuilderOOP {
 		return "Total Emp wage for Company: "+company+" is: "+totalEmpWage;
 	}
 	public static void main(String[] args) {
-		EmpWageBuilder dMart = new EmpWageBuilder("DMart",20,2,10);
+		EmployeeWageBuilderOOP dMart = new EmployeeWageBuilderOOP("DMart",20,2,10);
 		dMart.computeEmpWage();
 		System.out.println(dMart);
-		EmpWageBuilder reliance = new EmpWageBuilder("Reliance",10,4,20);
+		EmployeeWageBuilderOOP reliance = new EmployeeWageBuilderOOP("Reliance",10,4,20);
 		reliance.computeEmpWage();
 		System.out.println(reliance);
 	}
