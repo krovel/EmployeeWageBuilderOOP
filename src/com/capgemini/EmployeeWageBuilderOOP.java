@@ -1,6 +1,6 @@
 package com.capgemini;
 
-public class EmployeeWageBuilderOOP {
+public class EmployeeWageBuilderOOP implements ComputeEmpWage{
 	public static final int IS_FULL_TIME = 1;
 	public static final int IS_PART_TIME = 2;
 	public int numOfCompany = 0;
@@ -8,7 +8,8 @@ public class EmployeeWageBuilderOOP {
     public EmployeeWageBuilderOOP() {
     	companyEmpWageArray = new CompanyEmpWage[5];
     }
-    private void addCompanyEmpWage(String company, int empRatePerHour,int numOfWorkingDays, int maxHoursPerMonth ) {
+    @Override
+    public void addCompanyEmpWage(String company, int empRatePerHour,int numOfWorkingDays, int maxHoursPerMonth ) {
     	companyEmpWageArray[numOfCompany] = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
     numOfCompany++;
     }
@@ -37,6 +38,10 @@ public class EmployeeWageBuilderOOP {
 			System.out.println("Day: " + totalWorkingDays + " Emp Hr:  " + empHours);
 		}
        return totalEmpHours * companyEmpWage.empRatePerHour;
+	}
+	@Override
+	public int getTotalWage(String company) {
+		return 0;
 	}
 	 public static void main(String[] args) {
 		 EmployeeWageBuilderOOP empWageBuilder = new EmployeeWageBuilderOOP();
