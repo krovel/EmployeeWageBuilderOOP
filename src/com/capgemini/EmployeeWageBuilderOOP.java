@@ -13,8 +13,7 @@ public class EmployeeWageBuilderOOP implements ComputeEmpWage{
     	companyEmpWageArray[numOfCompany] = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
     numOfCompany++;
     }
-    @Override
-	public void computeEmpWage() {
+	private void computeEmpWage() {
 		for(int i =0; i < numOfCompany; i++) {
 			companyEmpWageArray[i].setTotalEmpWage(this.computeEmpWage(companyEmpWageArray[i]));
 		System.out.println(companyEmpWageArray[i]);
@@ -46,7 +45,7 @@ public class EmployeeWageBuilderOOP implements ComputeEmpWage{
 	}
 	 public static void main(String[] args) {
 		 EmployeeWageBuilderOOP empWageBuilder = new EmployeeWageBuilderOOP();
-		 empWageBuilder.addCompanyEmpWage("DMart",  20,  5,  10);
+		 empWageBuilder.addCompanyEmpWage("DMart",  20,  2,  10);
 		 empWageBuilder.addCompanyEmpWage("Reliance",  10,  4,  20);
 		 empWageBuilder.computeEmpWage();
 	 }
